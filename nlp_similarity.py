@@ -30,7 +30,8 @@ def getSimilarityAndDistance(sentence1, sentence2):
     global model
     if model is None:
         logger.info("START - 加载 SIMILARITY 模型")
-        model = SentenceTransformer('distiluse-base-multilingual-cased-v2') #初始化model
+        #model = SentenceTransformer('distiluse-base-multilingual-cased-v2') #初始化model
+        model = SentenceTransformer("uer/sbert-base-chinese-nli")
         logger.info("FINISH - 加载 SIMILARITY 模型")
 
     embedding1 = model.encode(sentence1)
