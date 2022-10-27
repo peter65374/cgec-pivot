@@ -13,10 +13,17 @@ sentence-transformers is multilingual sentence embedding from sbert.net made by 
 
 """
 
-#from sentence_transformers.cross_encoder import CrossEncoder
+# from sentence_transformers.cross_encoder import CrossEncoder
 from sentence_transformers import SentenceTransformer, util
-import numpy as np
+# import numpy as np
+# from transformers import AutoTokenizer
+# from transformers import AutoModel
 
+
+
+
+# tokenizer = AutoTokenizer.from_pretrained("uer/sbert-base-chinese-nli")
+# model = AutoModel.from_pretrained("uer/sbert-base-chinese-nli")
 model = SentenceTransformer('uer/sbert-base-chinese-nli') #model地址在 https://huggingface.co/uer/sbert-base-chinese-nli
 
 
@@ -34,6 +41,7 @@ sentences1 = [
     ]
 
 sentences2 = [
+    '诚信才是我们最值钱的东西',
     '妻子非常高兴',
     '妻子很开心',
     '妻子不高兴',
@@ -53,8 +61,10 @@ sentences2 = [
 embeddings1 = model.encode(sentences1, convert_to_tensor=True)
 embeddings2 = model.encode(sentences2, convert_to_tensor=True)
 
+
 #Compute cosine-similarities
 cosine_scores = util.cos_sim(embeddings1[0], embeddings2)
+
 
 #Output the pairs with their score
 for i in range(len(sentences2)):

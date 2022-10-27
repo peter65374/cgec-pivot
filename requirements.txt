@@ -1,0 +1,11 @@
+# 这里是项目中需要的Python package dependency
+# docker build的时候将需要先运行pip3 install xxxx 安装这些必须的packages.
+# 这个安装指令被放入Dockerfile文件中。
+
+
+transformers[torch]
+sentence-transformers
+spacy[zh]
+# sklearn
+# fastapi
+# uvicorn[standard]
