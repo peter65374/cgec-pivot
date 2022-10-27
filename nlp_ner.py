@@ -13,12 +13,21 @@ sudo python3 -m spacy download zh_core_web_trf
 """
 
 import logging
-
 import spacy
+from spacy.lang.zh.examples import sentences 
+
 
 logging.basicConfig(level=logging.INFO, format='%(asctime)s - %(name)s - %(levelname)s - %(message)s')
 logger = logging.getLogger("NER")
 nlp = None
+
+
+nlp = spacy.load("zh_core_web_sm")
+doc = nlp(sentences[0])
+print(doc.text)
+for token in doc:
+    print(token.text, token.pos_, token.dep_)
+
 
 
 def ner_chinese(sentence):

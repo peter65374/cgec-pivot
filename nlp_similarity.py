@@ -16,8 +16,9 @@ sentence-transformers is multilingual sentence embedding from sbert.net made by 
 import logging
 from typing import Text, Any
 
-import numpy as np
 import torch
+import numpy as np
+
 from sentence_transformers import SentenceTransformer
 from sklearn.metrics.pairwise import euclidean_distances
 
@@ -31,7 +32,7 @@ def getSimilarityAndDistance(sentence1, sentence2):
     if model is None:
         logger.info("START - 加载 SIMILARITY 模型")
         #model = SentenceTransformer('distiluse-base-multilingual-cased-v2') #初始化model
-        model = SentenceTransformer("uer/sbert-base-chinese-nli")
+        model = SentenceTransformer('uer/sbert-base-chinese-nli')
         logger.info("FINISH - 加载 SIMILARITY 模型")
 
     embedding1 = model.encode(sentence1)
