@@ -5,7 +5,6 @@
 
 transformers[torch]
 sentence-transformers
-spacy[zh]
 # sklearn
-# fastapi
-# uvicorn[standard]
+fastapi
+uvicorn[standard]
