@@ -2,9 +2,9 @@
 # The base image is python:3.7
 FROM python:3.7
 
-LABEL org.xiangci-coach.image-author="pe653"
-LABEL version = "0.1.1"
-LABEL description="aut0-cr2t's dockerfile."
+LABEL org.xiangci-cgec.image-author="pe653"
+LABEL version = "0.1.0"
+LABEL description="cgec-pivot's dockerfile."
 
 # 设置文件夹是工作目录
 WORKDIR /code

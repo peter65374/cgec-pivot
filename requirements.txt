@@ -2,9 +2,9 @@
 # docker build的时候将需要先运行pip3 install xxxx 安装这些必须的packages.
 # 这个安装指令被放入Dockerfile文件中。
 
-
+jieba
+pycorrector
 transformers[torch]
 sentence-transformers
-# sklearn
 fastapi
 uvicorn[standard]
