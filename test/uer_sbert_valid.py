@@ -10,7 +10,6 @@ sudo pip3 install transformers
 torch is Pytorch framework from pytorch.org
 transformers is huggingface transformers lib from huggingface.com
 sentence-transformers is multilingual sentence embedding from sbert.net made by UKP Lab
-
 """
 
 # from sentence_transformers.cross_encoder import CrossEncoder
@@ -19,20 +18,14 @@ from sentence_transformers import SentenceTransformer, util
 # from transformers import AutoTokenizer
 # from transformers import AutoModel
 
-
-
-
 # tokenizer = AutoTokenizer.from_pretrained("uer/sbert-base-chinese-nli")
 # model = AutoModel.from_pretrained("uer/sbert-base-chinese-nli")
 model = SentenceTransformer('uer/sbert-base-chinese-nli') #model地址在 https://huggingface.co/uer/sbert-base-chinese-nli
-
 
 # Pre-trained cross encoder
 #model = CrossEncoder('uer/sbert-base-chinese-nli')
 #model = CrossEncoder('cross-encoder/stsb-distilroberta-base')
 #model = CrossEncoder('cross-encoder/nli-roberta-base')
-
-
 
 sentences1 = [
     '妻子很高兴.',
@@ -61,10 +54,8 @@ sentences2 = [
 embeddings1 = model.encode(sentences1, convert_to_tensor=True)
 embeddings2 = model.encode(sentences2, convert_to_tensor=True)
 
-
 #Compute cosine-similarities
 cosine_scores = util.cos_sim(embeddings1[0], embeddings2)
-
 
 #Output the pairs with their score
 for i in range(len(sentences2)):

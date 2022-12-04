@@ -10,7 +10,6 @@ torch is Pytorch framework from pytorch.org
 transformers is huggingface transformers lib from huggingface.com
 sklearn is sci-kit learn data processing package from scikit-learn.org
 sentence-transformers is multilingual sentence embedding from sbert.net made by UKP Lab
-
 """
 
 import logging
@@ -31,7 +30,6 @@ def getSimilarityAndDistance(sentence1, sentence2):
     global model
     if model is None:
         logger.info("START - 加载 SIMILARITY 模型")
-        #model = SentenceTransformer('distiluse-base-multilingual-cased-v2') #初始化model
         model = SentenceTransformer('uer/sbert-base-chinese-nli')
         logger.info("FINISH - 加载 SIMILARITY 模型")
 
