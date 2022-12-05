@@ -11,15 +11,15 @@ import time
 import requests  
 import jieba.analyse
 
-API_ACCESS_TOKEN = '24.0a26a3a6d6d9d4eb91aeb4226e94253f.2592000.1670241973.282335-28265488'
+API_ACCESS_TOKEN = ''
 TOKEN_URL = 'https://aip.baidubce.com/oauth/2.0/token'
-API_KEY = 'jhDFBkvSQGtS9WPGZaE9IbcS'  # 例子需要更换
-SECRET_KEY = 'e5OXupgG11ovUFkA2zhqPD4HsLO35bqd'  # 例子需要更换
+API_KEY = ''  # 例子需要更换
+SECRET_KEY = ''  # 例子需要更换
 
 KEYWORD_URL = 'https://aip.baidubce.com/rpc/2.0/nlp/v1/txt_keywords_extraction'
 KEYWORD_HEADER = 'application/json'
 
-CLUE_API_KEY = 'H1OEd80HD9OXkdYvxYTd0101001110'
+CLUE_API_KEY = ''
 cl = None
 
 kelogger = logging.getLogger("Keypoint Extractor")
